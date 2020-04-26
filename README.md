@@ -7,7 +7,9 @@ Example: where Kai can go jogging these days
 
 https://raw.githack.com/kaicarver/leaflet/master/index.html
 
-Next: add some GeoJSON.
+### Show Strava / Garmin runs on map
+
+We'll need to use GeoJSON.
 
 https://leafletjs.com/examples/geojson/
 
@@ -32,3 +34,11 @@ python -m json.tool arun.json | less
 Github actually shows GeoJSON as a map by default, nice:
 
 https://github.com/kaicarver/leaflet/blob/master/arun.json
+
+This looks worth checking out, a tool to export Strava runs from command-line via the API
+
+https://github.com/node-geojson/strava-geojson
+
+And this is a nice Jupyter notebook demonstrating what you can do to analyze the Strava data
+
+https://knanne.github.io/notebooks/visualize_strava_data_in_python.html
