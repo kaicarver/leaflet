@@ -52,3 +52,7 @@ I guess GeoJSON is not ideal for tracking, since it's more for geographical feat
 https://dret.typepad.com/dretblog/2015/11/gps-data-on-the-web.html
 
 But I guess it's good enough.
+
+This is a nice super-simple approach to having a heatmap effect: just use opacity and line thickness.
+
+https://gis.stackexchange.com/a/118610/69718
