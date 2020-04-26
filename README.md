@@ -23,3 +23,12 @@ also available as a command-line tool
 
 https://github.com/tmcw/togeojson-cli
 
+Tip to display JSON legibly:
+
+```bash
+python -m json.tool arun.json | less
+```
+
+Github actually shows GeoJSON as a map by default, nice:
+
+https://github.com/kaicarver/leaflet/blob/master/arun.json
