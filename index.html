@@ -44,8 +44,9 @@
 		radius: 1000
 		}).addTo(mymap);
 
-	L.geoJSON(runs[0]).addTo(mymap);
-	L.geoJSON(runs[1]).addTo(mymap);
+	for (const run of runs) {
+		L.geoJSON(run).addTo(mymap);
+	}
 
 </script>
 <p><a href="https://github.com/kaicarver/leaflet">GitHub</a></p>
