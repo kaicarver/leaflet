@@ -42,3 +42,13 @@ https://github.com/node-geojson/strava-geojson
 And this is a nice Jupyter notebook demonstrating what you can do to analyze the Strava data
 
 https://knanne.github.io/notebooks/visualize_strava_data_in_python.html
+
+This is a nice site that allows testing out a GeoJSON file by just pasting it in
+
+http://geojson.io/#map=14/48.8824/2.3836
+
+I guess GeoJSON is not ideal for tracking, since it's more for geographical features, not tracking movement.
+
+https://dret.typepad.com/dretblog/2015/11/gps-data-on-the-web.html
+
+But I guess it's good enough.
