@@ -11,3 +11,15 @@ Next: add some GeoJSON.
 
 https://leafletjs.com/examples/geojson/
 
+I can export from Strava to GPX
+
+https://support.strava.com/hc/en-us/articles/216918437-Exporting-your-Data-and-Bulk-Export
+
+and convert from GPX to GeoJSON
+
+https://github.com/tmcw/togeojson
+
+also available as a command-line tool
+
+https://github.com/tmcw/togeojson-cli
+
