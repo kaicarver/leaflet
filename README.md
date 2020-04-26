@@ -56,3 +56,15 @@ But I guess it's good enough.
 This is a nice super-simple approach to having a heatmap effect: just use opacity and line thickness.
 
 https://gis.stackexchange.com/a/118610/69718
+
+Here's the current super-manual procedure to add a run to the map:
+
+1. Download the GPX file from Strava.
+2. Do this:
+
+```bash
+$ mv /mnt/c/Users/Kai/Downloads/*.gpx arun.gpx
+$ togeojson < arun.gpx | python -m json.tool > arun.js
+```
+
+3. copy the pretty-printed JSON into the `runs` array in `runs.js`.
