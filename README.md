@@ -72,7 +72,7 @@ $ togeojson < data/arun.gpx | python -m json.tool > data/arun.json
 
 ## TODOs
 
-* URL params should appear in the updated form
+* when first displayed, the form should match the URL params 
 * lat/lon should be displayable and/or updated by clicking on the map
 * GPS tracks should be
   * optionally displayed
@@ -80,4 +80,11 @@ $ togeojson < data/arun.gpx | python -m json.tool > data/arun.json
   * clickable to show date and distance and time info
   * transparent for heatmap effect
   * enterable by pasting in GeoJSON or a Strava etc. URL
+* try to keep from bloating to another Acme Maps...
+  * I mean keep in mind this nice app which does not need reinventing https://mapper.acme.com/?ll=48.87917,2.38472&z=11&t=M
 
+## Notes
+
+An old but good tip for quickly styling form elements:
+
+https://css-tricks.com/styling-texty-inputs-only
