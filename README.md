@@ -1,3 +1,5 @@
+[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/kaicarver/leaflet) 
+
 # leaflet
 
 ## Experiment with web mapping using [Leaflet](https://leafletjs.com/)
