@@ -24,13 +24,8 @@
   <script src="runs.js" type="text/javascript"></script>
   <script>
 	let url = new URL(location.href);
-	let lat = 48.879080;
-	let lon = 2.384734;
-	console.log(lat, lon)
-	//lat=48.88&lon=2.38&
-	lat = parseFloat(url.searchParams.get("lat")) || 48.879080;
-	lon = parseFloat(url.searchParams.get("lon")) || 2.384734;
-	console.log(lat, lon)
+	let lat = parseFloat(url.searchParams.get("lat")) || 48.879080;
+	let lon = parseFloat(url.searchParams.get("lon")) || 2.384734;
     var mymap = L.map('mapid').setView([48.879080, 2.384734], 14);
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
 		maxZoom: 18,

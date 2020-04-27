@@ -68,3 +68,16 @@ $ togeojson < data/arun.gpx | python -m json.tool > data/arun.json
 ```
 
 3. copy the pretty-printed JSON into the `runs` array in `runs.js`.
+
+
+## TODOs
+
+* URL params should appear in the updated form
+* lat/lon should be displayable and/or updated by clicking on the map
+* GPS tracks should be
+  * optionally displayed
+  * distinguishable
+  * clickable to show date and distance and time info
+  * transparent for heatmap effect
+  * enterable by pasting in GeoJSON or a Strava etc. URL
+
