@@ -20,7 +20,7 @@
 			is allowed to go jogging
 			/ <a href="https://github.com/kaicarver/leaflet">GitHub</a>
 			/ <a href="https://www.strava.com/dashboard?feed_type=my_activity">Strava</a>
-			/ <a href="#name=Kai&lat=48.87908&lon=2.384734">Kai</a>
+			/ <a href="#name=Kai&lat=48.87908&lon=2.384734" name="kailink">Kai</a>
 		</div>
 	</form>
   <div id="mapid" style="width: 100%; height: 650px;"></div>
@@ -38,6 +38,8 @@
 		document.forms.myform.name.value = name;
 		document.forms.myform.lat.value = lat;
 		document.forms.myform.lon.value = lon;
+		document.forms.myform.lon.value = lon;
+		//name=Kai&lat=48.87908&lon=2.384734
 		document.title = `${name}'s Safe Space`;
 		displayMap();
 	}

@@ -72,10 +72,8 @@ $ togeojson < data/arun.gpx | python -m json.tool > data/arun.json
 
 3. copy the pretty-printed JSON into the `runs` array in `runs.js`.
 
-
 ## TODOs
 
-* when first displayed, the form should match the URL params 
 * lat/lon should be displayable and/or updated by clicking on the map
 * GPS tracks should be
   * optionally displayed
@@ -86,6 +84,13 @@ $ togeojson < data/arun.gpx | python -m json.tool > data/arun.json
 * try to keep from bloating to another Acme Maps...
   * I mean keep in mind this nice app which does not need reinventing https://mapper.acme.com/?ll=48.87917,2.38472&z=11&t=M
 * handle non-Javascript case
+* handle #hash parameters same as regular URL parameters?
+  * would allow no-reload, more [SPA](https://en.wikipedia.org/wiki/Single-page_application)-like
+  * why am I rolling my own SPA?... laziness?...
+
+### TODONEs
+
+* when first displayed, the form should match the URL params 
 
 ## Notes
 
