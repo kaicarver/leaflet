@@ -87,6 +87,7 @@ $ togeojson < data/arun.gpx | python -m json.tool > data/arun.json
 * handle #hash parameters same as regular URL parameters?
   * would allow no-reload, more [SPA](https://en.wikipedia.org/wiki/Single-page_application)-like
   * why am I rolling my own SPA?... laziness?...
+* Handle [FOUC](https://en.wikipedia.org/wiki/Flash_of_unstyled_content), more like FODT or FONJT (default, non JS)
 
 ### TODONEs
 
