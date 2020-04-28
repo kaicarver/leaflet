@@ -1,0 +1,10 @@
+{
+  "name": "leaflet",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+  },
+  "scripts": {
+      "build": "mv /mnt/c/Users/Kai/Downloads/*.gpx /tmp/arun.gpx ; togeojson < /tmp/arun.gpx | python -m json.tool > /tmp/arun.json ; echo 'please insert /tmp/arun.json into runs.js'"
+  }
+}
