@@ -34,7 +34,7 @@
 		name = url.searchParams.get("name") || name;
 		lat = parseFloat(url.searchParams.get("lat")) || lat;
 		lon = parseFloat(url.searchParams.get("lon")) || lon;
-		console.log(`Welcome to the Safe Space, ${name}!`);
+		alert(`Welcome to your Safe Space, ${name}!`);
 		document.forms.myform.name.value = name;
 		document.forms.myform.lat.value = lat;
 		document.forms.myform.lon.value = lon;

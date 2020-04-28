@@ -74,7 +74,7 @@ $ togeojson < data/arun.gpx | python -m json.tool > data/arun.json
 
 ## TODOs
 
-* lat/lon should be displayable and/or updated by clicking on the map
+* lat/lon should be displayable and/or updated by hovering, clicking on the map
 * GPS tracks should be
   * optionally displayed
   * distinguishable
@@ -88,6 +88,7 @@ $ togeojson < data/arun.gpx | python -m json.tool > data/arun.json
   * would allow no-reload, more [SPA](https://en.wikipedia.org/wiki/Single-page_application)-like
   * why am I rolling my own SPA?... laziness?...
 * Handle [FOUC](https://en.wikipedia.org/wiki/Flash_of_unstyled_content), more like FODT or FONJT (default, non JS)
+* responsive, with map taking whole page, no weird scrolling
 
 ### TODONEs
 
