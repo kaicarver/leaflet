@@ -85,6 +85,7 @@ $ togeojson < data/arun.gpx | python -m json.tool > data/arun.json
   * enterable by pasting in GeoJSON or a Strava etc. URL
 * try to keep from bloating to another Acme Maps...
   * I mean keep in mind this nice app which does not need reinventing https://mapper.acme.com/?ll=48.87917,2.38472&z=11&t=M
+* handle non-Javascript case
 
 ## Notes
 
