@@ -20,8 +20,10 @@
 			is allowed to go jogging
 			/ <a href="https://github.com/kaicarver/leaflet">GitHub</a>
 			/ <a href="https://www.strava.com/dashboard?feed_type=my_activity">Strava</a>
-			/ <a href="#name=Kai&lat=48.87908&lon=2.384734" class="kailink">Kai</a>
-			/ <a href="#name=Manu&lat=48.87062&lon=2.31693" class="kailink">Manu</a>
+			/ Safe:
+			<a href="#name=Kai&lat=48.87908&lon=2.384734" class="kailink">Kai</a>
+			<a href="#name=Man&lat=48.87062&lon=2.31693" class="kailink">Man</a>
+			<a href="#name=Ann&lat=48.856451&lon=2.352483" class="kailink">Ann</a>
 		</div>
 	</form>
   <div id="mapid" style="width: 100%; height: 650px;"></div>
@@ -35,7 +37,7 @@
 		name = url.searchParams.get("name") || name;
 		lat = parseFloat(url.searchParams.get("lat")) || lat;
 		lon = parseFloat(url.searchParams.get("lon")) || lon;
-		alert(`Welcome to your Safe Space, ${name}!`);
+		console.log(`Welcome to your Safe Space, ${name}!`);
 		document.forms.myform.name.value = name;
 		document.forms.myform.lat.value = lat;
 		document.forms.myform.lon.value = lon;
@@ -47,7 +49,7 @@
 		displayMap(name);
 	}
 	function displayMap(name) {
-		var mymap = L.map('mapid').setView([lat, lon], 14);
+		var mymap = L.map('mapid').setView([lat, lon], 13);
 		L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
 			maxZoom: 18,
 			attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
