@@ -72,6 +72,14 @@ $ togeojson < data/arun.gpx | python -m json.tool > data/arun.json
 
 3. copy the pretty-printed JSON into the `runs` array in `runs.js`.
 
+UPDATED manual method!
+
+1. Download the GPX file from Strava to `/mnt/c/Users/Kai/Downloads/`
+2. `npm run build`
+3. `emacs runs.js /tmp/arun.json`
+4. copy the contents of `arun.json` as the last element
+   of the `runs` array in `runs.js`
+
 ## TODOs
 
 * lat/lon should be displayable and/or updated by hovering, clicking on the map
