@@ -41,9 +41,9 @@
 		document.forms.myform.lon.value = lon;
 		document.getElementById('kailink').search = "?name=Kai&lat=48.87908&lon=2.384734";
 		document.title = `${name}'s Safe Space`;
-		displayMap();
+		displayMap(name === 'Kai');
 	}
-	function displayMap() {
+	function displayMap(name) {
 		var mymap = L.map('mapid').setView([lat, lon], 14);
 		L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
 			maxZoom: 18,
@@ -55,29 +55,30 @@
 			zoomOffset: -1,
 			accessToken: 'pk.eyJ1Ijoia2FpY2FydmVyIiwiYSI6ImNpdW8waDdrZjAxNWsydXBlNW9vNDhvdHQifQ.pH2YweyGfZbSSj27QS9StA'
 		}).addTo(mymap);
-		//var marker = L.marker([48.86, 2.36]).addTo(mymap);
 		var circle = L.circle([lat, lon], {
 			color: 'red',
 			fillColor: '#f03',
 			fillOpacity: 0.0,
 			radius: 1000
 		}).addTo(mymap);
-		L.circle([48.882915, 2.406993], {
-			color: 'green',
-			fillColor: '#f0f03',
-			fillOpacity: 0.0,
-			weight: 1,
-			radius: 1000
-		}).addTo(mymap);
-		L.circle([48.872261, 2.393489], {
-			color: 'green',
-			fillColor: '#f0f03',
-			fillOpacity: 0.0,
-			weight: 1,
-			radius: 1000
-		}).addTo(mymap);
-		for (const run of runs) {
-			L.geoJSON(run).addTo(mymap);
+		if (extra) {
+			L.circle([48.882915, 2.406993], {
+				color: 'green',
+				fillColor: '#f0f03',
+				fillOpacity: 0.0,
+				weight: 1,
+				radius: 1000
+			}).addTo(mymap);
+			L.circle([48.872261, 2.393489], {
+				color: 'green',
+				fillColor: '#f0f03',
+				fillOpacity: 0.0,
+				weight: 1,
+				radius: 1000
+			}).addTo(mymap);
+			for (const run of runs) {
+				L.geoJSON(run).addTo(mymap);
+			}
 		}
 	}
 
