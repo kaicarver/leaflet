@@ -39,9 +39,10 @@
 		document.forms.myform.lat.value = lat;
 		document.forms.myform.lon.value = lon;
 		document.forms.myform.lon.value = lon;
-		document.getElementById('kailink').search = "?name=Kai&lat=48.87908&lon=2.384734";
+		let link = document.getElementById('kailink');
+		link.search = link.hash.replace("#", "?") // "?name=Kai&lat=48.87908&lon=2.384734";
 		document.title = `${name}'s Safe Space`;
-		displayMap(name === 'Kai');
+		displayMap(name);
 	}
 	function displayMap(name) {
 		var mymap = L.map('mapid').setView([lat, lon], 14);
@@ -61,7 +62,7 @@
 			fillOpacity: 0.0,
 			radius: 1000
 		}).addTo(mymap);
-		if (extra) {
+		if (name === 'Kai') {
 			L.circle([48.882915, 2.406993], {
 				color: 'green',
 				fillColor: '#f0f03',
