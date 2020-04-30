@@ -89,9 +89,16 @@ UPDATED manual method!
   * clickable to show date and distance and time info
   * transparent for heatmap effect
   * enterable by pasting in GeoJSON or a Strava etc. URL
+  * ...imported automatically from Strava or Garmin or other
 * try to keep from bloating to another Acme Maps...
-  * I mean keep in mind this nice app which does not need reinventing https://mapper.acme.com/?ll=48.87917,2.38472&z=11&t=M
-* handle non-Javascript case
+  * I mean keep in mind this nice app which does not need reinventing<br>
+  https://mapper.acme.com/?ll=48.87917,2.38472&z=11&t=M
+* but copy some of its nice features:
+  * allow `ll=x,y` param instead of tedious `lat=x&lon=y` 5 keys longer
+  * add `z` zoom param and `t` type of map param
+* handle no-Javascript case:
+  * at least, show an image of what it would look like
+  * at best, generate the right image server-side
 * handle #hash parameters same as regular URL parameters?
   * would allow no-reload, more [SPA](https://en.wikipedia.org/wiki/Single-page_application)-like
   * why am I rolling my own SPA?... laziness?...
@@ -104,6 +111,6 @@ UPDATED manual method!
 
 ## Notes
 
-An old but good tip for quickly styling form elements:
+An old but good tip for quickly selecting certain form elements for styling:
 
 https://css-tricks.com/styling-texty-inputs-only
