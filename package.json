@@ -5,6 +5,6 @@
   "dependencies": {
   },
   "scripts": {
-      "build": "mv /mnt/c/Users/Kai/Downloads/*.gpx /tmp/arun.gpx ; togeojson < /tmp/arun.gpx | python -m json.tool > /tmp/arun.json ; echo 'please insert /tmp/arun.json into runs.js'"
+      "import": "mv /mnt/c/Users/Kai/Downloads/*.gpx /tmp/arun.gpx ; togeojson < /tmp/arun.gpx | python -m json.tool > /tmp/arun.json ; echo 'please insert /tmp/arun.json into runs.js, for example with emacs runs.js /tmp/arun.json' ; emacs runs.js /tmp/arun.json"
   }
 }
