@@ -17,22 +17,22 @@
 			<input name="lat" type="text" value="48.87062" />
 			<input name="lon" type="text" value="2.31693" />
 			<input type="submit" />
-			is allowed to go jogging
-			/ <a href="https://github.com/kaicarver/leaflet">GitHub</a>
-			/ <a href="https://www.strava.com/dashboard?feed_type=my_activity">Strava</a>
-			/ Safe:
+			is allowed to go jogging.
+			Safe:
 			<a href="#name=Man&lat=48.87062&lon=2.31693" class="kailink">Man</a>
 			<a href="#name=Ed&lat=48.854444&lon=2.320833" class="kailink">Ed</a>
 			<a href="#name=Chris&lat=48.871330&lon=2.317495" class="kailink">Chris</a>
 			<a href="#name=Ann&lat=48.856451&lon=2.352483" class="kailink">Ann</a>
 			<a href="#name=Kai&lat=48.87908&lon=2.384734" class="kailink">Kai</a>
+			Sources: <a href="https://github.com/kaicarver/leaflet">GitHub</a>
+			/ <a href="https://www.strava.com/dashboard?feed_type=my_activity">Strava</a>
 		</div>
 	</form>
   <div id="mapid" style="width: 100%; height: 650px;"></div>
   <script src="runs.js" type="text/javascript"></script>
   <script>
 	let defname = 'Ann';
-    	let deflat = 48.856451;
+    let deflat = 48.856451;
 	let deflon = 2.352483;
 	let url = new URL(location.href);
 	window.onload = () => {
@@ -51,7 +51,7 @@
 		displayMap(name);
 	}
 	function displayMap(name) {
-		var mymap = L.map('mapid').setView([deflat, deflon], 12);
+		var mymap = L.map('mapid').setView([lat, lon], 12);
 		L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
 			maxZoom: 24,
 			attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
