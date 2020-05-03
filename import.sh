@@ -14,5 +14,10 @@ if [ -f "$1" ]; then
     mv $JS runs.js
     rm $GPX
 else
-    echo "$1 not found"
+    if [ "$#" -eq 1 ]; then
+	echo "$1 not found"
+    fi
+    echo "usage: $0 file.gpx"
+    echo "  imports a GPX file downloaded from, for example,
+    https://www.strava.com/activities/3268461774"
 fi
