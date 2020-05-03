@@ -3,6 +3,10 @@
 #   https://www.strava.com/dashboard?feed_type=my_activity
 
 for f in /mnt/c/Users/Kai/Downloads/*.gpx; do
-    echo import $f
-    ./import.sh $f
+    if [ -f "$f" ]; then
+	echo import $f
+	./import.sh $f
+    else
+	echo "$f: no such file to import."
+    fi
 done
