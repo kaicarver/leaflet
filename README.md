@@ -29,8 +29,9 @@ https://raw.githack.com/kaicarver/leaflet/master/index.html
   * I mean keep in mind this nice app which does not need reinventing<br>
   https://mapper.acme.com/?ll=48.87917,2.38472&z=11&t=M
 * but copy some of its nice features:
-  * allow `ll=x,y` param instead of tedious `lat=x&lon=y` 5 keys longer
+  * allow (or require? avoid TMTOWTDI) `ll=x,y` param instead of tedious `lat=x&lon=y` 5 keys longer
   * add `z` zoom param and `t` type of map param
+  * should update URL params like lat, lon, zoom
 * handle no-Javascript case:
   * at least, show an image of what it would look like
   * at best, generate the right image server-side
