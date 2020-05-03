@@ -8,8 +8,14 @@ for f in /mnt/c/Users/Kai/Downloads/*.gpx; do
 	./import.sh $f
     else
 	echo "$f: no such file to import."
+	echo "download from, for example,"
+	echo "  https://www.strava.com/dashboard?feed_type=my_activity"
     fi
 done
 
-dupes=`grep name runs.js | uniq -d`
-if [ "$dupes" != "" ] ; then echo "possible duplicates: " $dupe ; fi
+JS=runs.js
+dupes=`grep name $JS | uniq -D`
+if [ "$dupes" != "" ]; then
+    echo "possible duplicates in $JS:"
+    echo "$dupes"
+fi
