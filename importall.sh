@@ -14,7 +14,7 @@ for f in /mnt/c/Users/Kai/Downloads/*.gpx; do
 done
 
 JS=runs.js
-dupes=`grep name $JS | uniq -D`
+dupes=`grep name $JS | sort | uniq -D`
 if [ "$dupes" != "" ]; then
     echo "possible duplicates in $JS:"
     echo "$dupes"
