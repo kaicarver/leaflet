@@ -33,11 +33,11 @@
   <script src="runs.js" type="text/javascript"></script>
   <script>
 	let defname = 'Ann';
-    let deflat = 48.856451;
+	let deflat = 48.856451;
 	let deflon = 2.352483;
 	let url = new URL(location.href);
 	window.onload = () => {
-		name = url.searchParams.get("name") || name;
+		name = url.searchParams.get("name") || defname;
 		lat = parseFloat(url.searchParams.get("lat")) || deflat;
 		lon = parseFloat(url.searchParams.get("lon")) || deflon;
 		console.log(`Welcome to your Safe Space, ${name}!`);
