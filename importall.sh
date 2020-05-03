@@ -10,3 +10,6 @@ for f in /mnt/c/Users/Kai/Downloads/*.gpx; do
 	echo "$f: no such file to import."
     fi
 done
+
+dupes=`grep name runs.js | uniq -d`
+if [ "$dupes" != "" ] ; then echo "possible duplicates: " $dupe ; fi
