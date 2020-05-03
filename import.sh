@@ -2,9 +2,17 @@
 # import a GPX file downloaded from, for example,
 #   https://www.strava.com/activities/3268461774
 
-mv $1 /tmp/arun.gpx
-togeojson < /tmp/arun.gpx | python -m json.tool > /tmp/arun.json
-head -n-2 runs.js > /tmp/runs.js; echo ',' >> /tmp/runs.js
-cat /tmp/arun.json >> /tmp/runs.js; tail -n2 runs.js >> /tmp/runs.js
-mv /tmp/runs.js runs.js
+GPX=/tmp/arun.gpx
+JSON=/tmp/arun.json
+JS=/tmp/runs.js
 
+if [ -f "$1" ]; then
+    mv $1 $GPX
+    togeojson < $GPX | python -m json.tool > $JSON
+    head -n-2 runs.js > $JS; echo ',' >> $JS
+    cat $JSON >> $JS; tail -n2 runs.js >> $JS
+    mv $JS runs.js
+    rm $GPX
+else
+    echo "$1 not found"
+fi
