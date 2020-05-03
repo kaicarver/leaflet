@@ -5,12 +5,41 @@
 
 ## Experiment with web mapping using [Leaflet](https://leafletjs.com/)
 
-Example: where Kai can go jogging these days
-(but not after 10 am or before 7 pm)
+Web app: where Kai (or anyone else) can go jogging these days
+(but, in Paris, not after 10 am or before 7 pm).
 
 https://raw.githack.com/kaicarver/leaflet/master/index.html
 
-### Show Strava / Garmin runs on map
+## TODOs
+
+* lat/lon should be displayable and/or updated by hovering, clicking on the map
+* be responsive, with map taking whole page, no weird scrolling
+* handle #hash parameters same as regular URL parameters?
+  * would allow no-reload, more [SPA](https://en.wikipedia.org/wiki/Single-page_application)-like
+  * why am I rolling my own SPA?... laziness?...
+* Handle [FOUC](https://en.wikipedia.org/wiki/Flash_of_unstyled_content), more like FODT or FONJT (default, non JS)
+* GPS tracks should be
+  * optionally displayed
+  * distinguishable
+  * clickable to show date and distance and time info
+  * transparent for heatmap effect
+  * enterable by pasting in GeoJSON or a Strava etc. URL
+  * ...imported automatically from Strava or Garmin or other
+* try to keep from bloating to another Acme Maps...
+  * I mean keep in mind this nice app which does not need reinventing<br>
+  https://mapper.acme.com/?ll=48.87917,2.38472&z=11&t=M
+* but copy some of its nice features:
+  * allow `ll=x,y` param instead of tedious `lat=x&lon=y` 5 keys longer
+  * add `z` zoom param and `t` type of map param
+* handle no-Javascript case:
+  * at least, show an image of what it would look like
+  * at best, generate the right image server-side
+
+### TODONEs
+
+* when first displayed, the form should match the URL params
+
+#### Show Strava / Garmin runs on map
 
 We'll need to use GeoJSON.
 
@@ -60,6 +89,8 @@ This is a nice super-simple approach to having a heatmap effect: just use opacit
 
 https://gis.stackexchange.com/a/118610/69718
 
+#### How to add runs
+
 Here's the current super-manual procedure to add a run to the map:
 
 1. Download the GPX file from Strava.
@@ -80,34 +111,10 @@ UPDATED manual method!
 4. copy the contents of `arun.json` as the last element
    of the `runs` array in `runs.js`
 
-## TODOs
+UPDATED again:
 
-* lat/lon should be displayable and/or updated by hovering, clicking on the map
-* GPS tracks should be
-  * optionally displayed
-  * distinguishable
-  * clickable to show date and distance and time info
-  * transparent for heatmap effect
-  * enterable by pasting in GeoJSON or a Strava etc. URL
-  * ...imported automatically from Strava or Garmin or other
-* try to keep from bloating to another Acme Maps...
-  * I mean keep in mind this nice app which does not need reinventing<br>
-  https://mapper.acme.com/?ll=48.87917,2.38472&z=11&t=M
-* but copy some of its nice features:
-  * allow `ll=x,y` param instead of tedious `lat=x&lon=y` 5 keys longer
-  * add `z` zoom param and `t` type of map param
-* handle no-Javascript case:
-  * at least, show an image of what it would look like
-  * at best, generate the right image server-side
-* handle #hash parameters same as regular URL parameters?
-  * would allow no-reload, more [SPA](https://en.wikipedia.org/wiki/Single-page_application)-like
-  * why am I rolling my own SPA?... laziness?...
-* Handle [FOUC](https://en.wikipedia.org/wiki/Flash_of_unstyled_content), more like FODT or FONJT (default, non JS)
-* responsive, with map taking whole page, no weird scrolling
-
-### TODONEs
-
-* when first displayed, the form should match the URL params 
+1. Download one or more GPX files from Strava to `/mnt/c/Users/Kai/Downloads/`
+2. `make`
 
 ## Notes
 
