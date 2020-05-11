@@ -8,6 +8,7 @@
   <style>
 	  input:not([type=submit]) { width: 60px; }
 	  input[name=name] { width: 80px; }
+	  input[name=rad] { width: 30px; }
   </style>
 </head>
 <body>
@@ -16,6 +17,7 @@
 			<input name="name" type="text" value="Toto" />
 			<input name="lat" type="text" value="48.87062" />
 			<input name="lon" type="text" value="2.31693" />
+			<input name="rad" type="text" value="1" />
 			<input type="submit" value="was allowed"/>
 			to go jogging.
 			Safe:
@@ -35,16 +37,19 @@
 	let defname = 'Kai';
 	let deflat = 48.87908;
 	let deflon = 2.384734;
+	let defrad = 1;
+	let defzoom = 12;
 	let url = new URL(location.href);
 	window.onload = () => {
 		name = url.searchParams.get("name") || defname;
 		lat = parseFloat(url.searchParams.get("lat")) || deflat;
 		lon = parseFloat(url.searchParams.get("lon")) || deflon;
+		rad = parseFloat(url.searchParams.get("rad")) || defrad;
 		console.log(`Welcome to your Safe Space, ${name}!`);
 		document.forms.myform.name.value = name;
 		document.forms.myform.lat.value = lat;
 		document.forms.myform.lon.value = lon;
-		document.forms.myform.lon.value = lon;
+		document.forms.myform.rad.value = rad;
 		let list = document.getElementsByClassName('kailink');
 		for (const link of list) 
 			link.search = link.hash.replace("#", "?")
@@ -52,7 +57,11 @@
 		displayMap(name);
 	}
 	function displayMap(name) {
-		var mymap = L.map('mapid').setView([lat, lon], 12);
+		let zoom = defzoom;
+		if (rad >= 100) {
+			zoom = 9;
+		}
+		var mymap = L.map('mapid').setView([lat, lon], zoom);
 		L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
 			maxZoom: 24,
 			attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
@@ -67,7 +76,7 @@
 			color: 'red',
 			fillColor: '#f03',
 			fillOpacity: 0.0,
-			radius: 1000
+			radius: rad * 1000
 		}).addTo(mymap);
 		if (name === 'Kai') {
 			L.circle([48.882915, 2.406993], {
