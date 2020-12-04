@@ -13,13 +13,12 @@
 </head>
 <body>
 	<form id="myform" method=GET>
-		<div>Where
+		<div><input type="submit" value="Where"/>
 			<input name="name" type="text" value="Toto" />
 			<input name="lat" type="text" value="48.87062" />
 			<input name="lon" type="text" value="2.31693" />
 			<input name="rad" type="text" value="1" />
-			<input type="submit" value="was allowed"/>
-			to go jogging.
+			can go jogging etc.
 			Safe:
 			<a href="#name=Man&lat=48.87062&lon=2.31693" class="kailink">Man</a>
 			<a href="#name=Ed&lat=48.854444&lon=2.320833" class="kailink">Ed</a>
@@ -60,6 +59,8 @@
 		let zoom = defzoom;
 		if (rad >= 100) {
 			zoom = 9;
+		} else if (rad >= 20) {
+			zoom = 10;
 		}
 		var mymap = L.map('mapid').setView([lat, lon], zoom);
 		L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
